@@ -31,15 +31,31 @@ public class Main {
     }
 
     private static List<Employee> parseXML(String fileName) throws ParserConfigurationException, IOException, SAXException {
+        //List<Employee> list = new
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(new File("data2.xml"));
+        Document doc = builder.parse(new File(fileName));
         Node root = doc.getDocumentElement();
 
         System.out.println( "Корневой элемент: " + root.getNodeName());
         read(root);
-        Element root = document.createElement("root");
-        document.appendChild(root);
+        return null;
+//        NodeList nodeList = root.getChildNodes();
+//        for (int i = 0; i < nodeList.getLength(); i++) {
+//            Node node = nodeList.item(i);
+//            System.out.println("Teкyщий элeмeнт: " + node.getNodeName());
+//        }
+//        if (Node.ELEMENT_NODE == node.getNodeType()) {
+//            Element employee = (Element) node;
+//            System.out.println("ID сотрудника: " + employee .getAttribute("id"));
+//            System.out.println( "Id инструмента: " +
+//                    employee.getElementsByTagName( "tool").item(0).getTextContent());
+//// работа с элементом
+//        }
+//
+//
+       // Element root = document.createElement("root");
+        //document.appendChild(root);
     }
 
     private static void read(Node node) {
